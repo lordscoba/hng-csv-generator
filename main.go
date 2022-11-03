@@ -7,7 +7,7 @@ import (
  "fmt"
  "os"
  "crypto/sha256"
- // "strconv"
+ "log"
 )
 type NftRecord struct{
   Format        string  `json:"format"`
@@ -59,7 +59,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	var nft1 []NftRecord
+	// var nft1 []NftRecord
 
 	for _, each := range csvData {
 		// nft.Format = "CHIP-0007"
@@ -117,30 +117,39 @@ func main() {
 		// fmt.Println(tt)
 nftRecord.Data.ExampleData = tt
 
+
+// Convert to JSON
+jsonData, err := json.Marshal(nftRecord)
+if err != nil {
+	fmt.Println(err)
+	os.Exit(1)
+}
+
+fmt.Println(string(jsonData))
+
+path := "output"
+err = os.Mkdir(path, os.ModePerm)
+		if err != nil {
+			log.Println(err)
+		}
+jsonFile, err := os.Create("./output/"+each[1]+".json")
+if err != nil {
+	fmt.Println(err)
+}
+defer jsonFile.Close()
+
+jsonFile.Write(jsonData)
+jsonFile.Close()
+
+
 		if each[1] == "" {
          // skip header line
          break
       }
 
-		nft1 = append(nft1, nftRecord)
+// if you want to create one file
+		// nft1 = append(nft1, nftRecord)
 
 	}
 
-	// Convert to JSON
-	jsonData, err := json.Marshal(nft1)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-
-	fmt.Println(string(jsonData))
-
-	jsonFile, err := os.Create("./data.json")
-	if err != nil {
-		fmt.Println(err)
-	}
-	defer jsonFile.Close()
-
-	jsonFile.Write(jsonData)
-	jsonFile.Close()
 }
