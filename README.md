@@ -8,8 +8,8 @@
 
 <ul>
 <li>First of all you have to make sure you have Golang installed in your computer</li>
-<li>visit to install in Windows https://linuxhint.com/install-use-go-ubuntu-22-04/</li>
-<li>visit to install in Linux and MacOS https://go.dev/doc/install</li>
+<li>visit to install in Linux https://linuxhint.com/install-use-go-ubuntu-22-04/</li>
+<li>visit to install in Windows and MacOS https://go.dev/doc/install</li>
 <br>
 <br>
 <li>Clone the file from the github repository on your CLI using</li>
