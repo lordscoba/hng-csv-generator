@@ -13,16 +13,16 @@
 <br>
 <br>
 <li>Clone the file from the github repository on your CLI using</li>
-<code>$git clone https://github.com/lordscoba/hng-csv-generator.git</code>
+<code>$git clone https://github.com/lordscoba/hng-csv-generator.git</code><br>
 <code>$git status </code>
 
-<li>Open your computer terminal and use the cd command to enter the  <strong>hng-csv-generator/</strong>  folder</li>
+<li>Open your computer terminal and use the cd command to enter the  <strong>"hng-csv-generator/"</strong>  folder</li>
 <li>Run the following code</li>
 <code>$go mod init github.com/lordscoba/hng-csv-generator</code>
-<li>Put the CSV file you want to use in the <strong>hng-csv-generator/</strong> root directory</li>
+<li>Put the CSV file you want to use in the <strong>"hng-csv-generator/"</strong> root directory</li>
 <li>Put the File name (filename.csv) and extention inside the quotation on line 60</li>
 <li>Run the following code</li>
-<code>$go build</code>
+<code>$go build</code><br>
 <code>$go run main.go</code>
 </ul>
 
